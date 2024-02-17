@@ -1,1 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>デタラメ心理テスト β1.0</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #fff;
+    }
+    .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    button {
+        padding: 10px 20px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
 
+<div class="container">
+    <h1>デタラメ心理テスト</h1>
+    <h1>作成:chatGPT & iruka</h1>
+    <p>以下の質問にお答えください：</p>
+    <form id="psychologyTestForm">
+        <p><input type="checkbox" name="question1" value="option1"> 赤色が好きですか？</p>
+        <p><input type="checkbox" name="question2" value="option2"> 今日はいい天気ですか？</p>
+        <p><input type="checkbox" name="question3" value="option3"> バナナは好きですか？</p>
+        <p><input type="checkbox" name="question4" value="option4"> 数学は得意ですか？</p>
+        <p><input type="checkbox" name="question5" value="option5"> ショッピングが好きですか？</p>
+        <button type="button" onclick="getPsychologyResult()">結果を見る</button>
+    </form>
+    <p id="result"></p>
+</div>
+
+<script>
+function getPsychologyResult() {
+    const form = document.getElementById("psychologyTestForm");
+    const checkboxes = form.querySelectorAll('input[type="checkbox"]:checked');
+    
+    if (checkboxes.length === 0) {
+        alert("少なくとも1つの質問にチェックしてください。");
+        return;
+    }
+
+    const results = ["◽︎", "⚪︎", "△"];
+    const randomResult = results[Math.floor(Math.random() * results.length)];
+    document.getElementById("result").innerText = "あなたは " + randomResult + " です。";
+}
+</script>
+
+</body>
+</html>
