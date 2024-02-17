@@ -13,7 +13,7 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
-        background-color: #fff;
+        background-color: #f4f4f4;
     }
     .container {
         background-color: #fff;
@@ -32,14 +32,12 @@
 
 <div class="container">
     <h1>デタラメ心理テスト</h1>
-    <h1>作成:chatGPT & iruka</h1>
+    <p>作成: chatGPT & iruka</p>
     <p>以下の質問にお答えください：</p>
     <form id="psychologyTestForm">
-        <p><input type="checkbox" name="question1" value="option1"> 赤色が好きですか？</p>
-        <p><input type="checkbox" name="question2" value="option2"> 今日はいい天気ですか？</p>
-        <p><input type="checkbox" name="question3" value="option3"> バナナは好きですか？</p>
-        <p><input type="checkbox" name="question4" value="option4"> 数学は得意ですか？</p>
-        <p><input type="checkbox" name="question5" value="option5"> ショッピングが好きですか？</p>
+        <p><input type="checkbox" name="question1" value="option1"> あなたは、カレーですか</p>
+        <p><input type="checkbox" name="question2" value="option2"> あなたは、うどんですか</p>
+        <p><input type="checkbox" name="question3" value="option3"> あなたは、PCですか</p>
         <button type="button" onclick="getPsychologyResult()">結果を見る</button>
     </form>
     <p id="result"></p>
@@ -55,9 +53,20 @@ function getPsychologyResult() {
         return;
     }
 
-    const results = ["◽︎", "⚪︎", "△"];
-    const randomResult = results[Math.floor(Math.random() * results.length)];
-    document.getElementById("result").innerText = "あなたは " + randomResult + " です。";
+    const results1 = ["走る", "泳ぐ", "食べる", "眠る", "笑う"];
+    const results2 = ["元気な", "悲しい", "幸せな", "怒っている", "驚いている"];
+    const results3 = ["猫", "机", "空", "夢", "未来"];
+
+    const randomIndex1 = Math.floor(Math.random() * results1.length);
+    const randomIndex2 = Math.floor(Math.random() * results2.length);
+    const randomIndex3 = Math.floor(Math.random() * results3.length);
+
+    const result1 = results1[randomIndex1];
+    const result2 = results2[randomIndex2];
+    const result3 = results3[randomIndex3];
+
+    const result = result1 + " " + result2 + " " + result3;
+    document.getElementById("result").innerText = "あなたは " + result + " です。";
 }
 </script>
 
