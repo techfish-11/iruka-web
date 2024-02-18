@@ -20,18 +20,29 @@
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
     }
     button {
         padding: 10px 20px;
         margin-top: 10px;
         cursor: pointer;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+    p {
+        margin: 10px 0;
     }
 </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>デタラメ心理テスト</h1>
+    <h1><a href="index2.html" style="text-decoration: none; color: inherit;">デタラメ心理テスト</a></h1>
     <p>作成: chatGPT & iruka</p>
     <p>以下の質問にお答えください：</p>
     <form id="psychologyTestForm">
@@ -53,9 +64,9 @@ function getPsychologyResult() {
         return;
     }
 
-    const results1 = ["走る", "泳ぐ", "食べる", "眠る", "笑う", "飛ぶ", "歌う", "踊る", "読む", "書く"];
-    const results2 = ["元気な", "悲しい", "幸せな", "怒っている", "驚いている", "動いてる", "疲れた", "楽しい", "怠惰な", "熱心な"];
-    const results3 = ["猫", "机", "空", "夢", "未来", "iruka", "友達", "家族", "自然", "宇宙"];
+    const results1 = ["走る", "泳ぐ", "食べる", "眠る", "笑う", "飛ぶ", "歌う", "踊る", "読む", "書く", "遊ぶ", "勉強する", "働く", "休む", "話す", "聞く", "考える", "忘れる", "覚える", "知る"];
+    const results2 = ["元気な", "悲しい", "幸せな", "怒っている", "驚いている", "動いてる", "疲れた", "楽しい", "怠惰な", "熱心な", "冷静な", "熱心な", "冷淡な", "熱心な", "冷静な", "熱心な", "冷淡な", "熱心な", "冷静な", "熱心な"];
+    const results3 = ["猫", "机", "空", "夢", "未来", "iruka", "友達", "家族", "自然", "宇宙", "地球", "太陽", "月", "星", "風", "雨", "雪", "雷", "電", "火"];
 
     const randomIndex1 = Math.floor(Math.random() * results1.length);
     const randomIndex2 = Math.floor(Math.random() * results2.length);
