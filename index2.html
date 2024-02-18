@@ -9,18 +9,15 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
         background-color: #f4f4f4;
     }
     .container {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         text-align: center;
+        margin-top: 20vh;
+    }
+    .rocket {
+        font-size: 3rem;
+        position: absolute;
     }
 </style>
 </head>
@@ -28,9 +25,27 @@
 
 <div class="container">
     <h1>おめでとうございます！</h1>
-    <p>あなたは隠しページを発見しました！</p>
+    <p>あなたは隠しページを発見しました！！</p>
     <p>まぁここには何もないけど。</p>
 </div>
+
+<script>
+function moveRocket() {
+    const rocket = document.getElementById("rocket");
+    const maxX = window.innerWidth - rocket.clientWidth;
+    const maxY = window.innerHeight - rocket.clientHeight;
+
+    const randomX = Math.floor(Math.random() * maxX);
+    const randomY = Math.floor(Math.random() * maxY);
+
+    rocket.style.left = randomX + "px";
+    rocket.style.top = randomY + "px";
+}
+
+setInterval(moveRocket, 1000);
+</script>
+
+<div class="rocket" id="rocket">🚀</div>
 
 </body>
 </html>
