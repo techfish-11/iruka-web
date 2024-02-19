@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ランダムレシピ</title>
+</head>
+<body>
+    <header>
+        <h1>ランダムレシピ</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="jo-ku.html">ランダムジョーク</a></li>
+                <li><a href="meigen.html">ランダム名言</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>今日のランダムレシピ</h2>
+            <p>今日のレシピに使う食材:</p>
+            <ul id="ingredients">
+                <!-- ここにJavaScriptでランダムに生成された食材が表示されます -->
+            </ul>
+            <h3>レシピ:</h3>
+            <p id="recipe">ここにランダムなレシピが表示されます。</p>
+            <button onclick="generateRecipe()">新しいレシピを生成</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 ランダムジェネレーションWeb. All rights reserved.</p>
+    </footer>
+    <script>
+        // ランダムな食材のリスト
+        const ingredientsList = ["トウモロコシ", "チーズ", "アボカド", "キウイ", "ナッツ", "サーモン", "イカ", "ブロッコリー", "キノコ", "バナナ", "アスパラガス", "パン", "トマト", "スイカ", "カレー粉", "チョコレート", "エビ", "マグロ", "ピーマン", "ハム"];
+
+        // レシピを生成する関数
+        function generateRecipe() {
+            const randomIngredients = [];
+            // ランダムに3つの食材を選択
+            for (let i = 0; i < 3; i++) {
+                const randomIndex = Math.floor(Math.random() * ingredientsList.length);
+                randomIngredients.push(ingredientsList[randomIndex]);
+            }
+            // 選択された食材を表示
+            const ingredientsElement = document.getElementById("ingredients");
+            ingredientsElement.innerHTML = "";
+            randomIngredients.forEach(ingredient => {
+                const li = document.createElement("li");
+                li.textContent = ingredient;
+                ingredientsElement.appendChild(li);
+            });
+
+            // しょうもないレシピの提案
+            const recipe = `【しょうもないレシピ】
+                            ${randomIngredients[0]}と${randomIngredients[1]}の${randomIngredients[2]}サラダ:
+                            ${randomIngredients[0]}と${randomIngredients[1]}を切って${randomIngredients[2]}と混ぜる。塩と胡椒で味を調えて完成！`;
+            document.getElementById("recipe").textContent = recipe;
+        }
+
+        // 初回のページ読み込み時にレシピを生成
+        generateRecipe();
+    </script>
+</body>
+</html>
