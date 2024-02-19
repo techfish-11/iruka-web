@@ -1,85 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>デタラメ心理テスト β1.0</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #f4f4f4;
-    }
-    .container {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        text-align: center;
-    }
-    button {
-        padding: 10px 20px;
-        margin-top: 10px;
-        cursor: pointer;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 5px;
-    }
-    button:hover {
-        background-color: #45a049;
-    }
-    p {
-        margin: 10px 0;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ランダムジェネレーションWeb</title>
 </head>
 <body>
-
-<div class="container">
-    <h1><a href="index2.html" style="text-decoration: none; color: inherit;">デタラメ心理テスト</a></h1>
-    <p>作成: chatGPT & iruka</p>
-    <p>以下の質問にお答えください：</p>
-    <form id="psychologyTestForm">
-        <p><input type="checkbox" name="question1" value="option1"> あなたは、カレーですか</p>
-        <p><input type="checkbox" name="question2" value="option2"> あなたは、うどんですか</p>
-        <p><input type="checkbox" name="question3" value="option3"> あなたは、PCですか</p>
-        <button type="button" onclick="getPsychologyResult()">結果を見る</button>
-    </form>
-    <p id="result"></p>
-</div>
-
-<script>
-function getPsychologyResult() {
-    const form = document.getElementById("psychologyTestForm");
-    const checkboxes = form.querySelectorAll('input[type="checkbox"]:checked');
-    
-    if (checkboxes.length === 0) {
-        alert("少なくとも1つの質問にチェックしてください。");
-        return;
-    }
-
-    const results1 = ["走る", "泳ぐ", "食べる", "眠る", "笑う", "飛ぶ", "歌う", "踊る", "読む", "書く", "遊ぶ", "勉強する", "働く", "休む", "話す", "聞く", "考える", "忘れる", "覚える", "知る"];
-    const results2 = ["元気な", "悲しい", "幸せな", "怒っている", "驚いている", "動いてる", "疲れた", "楽しい", "怠惰な", "熱心な", "冷静な", "熱心な", "冷淡な", "熱心な", "冷静な", "熱心な", "冷淡な", "熱心な", "冷静な", "熱心な"];
-    const results3 = ["猫", "机", "空", "夢", "未来", "iruka", "友達", "家族", "自然", "宇宙", "地球", "太陽", "月", "星", "風", "雨", "雪", "雷", "電", "火"];
-
-    const randomIndex1 = Math.floor(Math.random() * results1.length);
-    const randomIndex2 = Math.floor(Math.random() * results2.length);
-    const randomIndex3 = Math.floor(Math.random() * results3.length);
-
-    const result1 = results1[randomIndex1];
-    const result2 = results2[randomIndex2];
-    const result3 = results3[randomIndex3];
-
-    const result = result1 + " " + result2 + " " + result3;
-    document.getElementById("result").innerText = "あなたは " + result + " です...";
-}
-</script>
-
+    <header>
+        <h1>ランダムジェネレーションWeb</h1>
+        <nav>
+            <ul>
+                <li><a href="recipe.html">ランダムレシピ</a></li>
+                <li><a href="jo-ku.html">ランダムジョーク</a></li>
+                <li><a href="meigen.html">ランダム名言</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>ようこそ！</h2>
+            <p>ランダムジェネレーションWebへようこそ。以下のポータルサイトからランダムな情報を取得して楽しんでください。</p>
+        </section>
+        <section>
+            <h2>ポータルサイト</h2>
+            <ul>
+                <li><a href="recipe.html">ランダムレシピ</a> - ランダムなレシピを見つけて料理のアイデアを得ましょう。</li>
+                <li><a href="jo-ku.html">ランダムジョーク</a> - 笑いを提供するランダムなジョークを読んでリフレッシュしましょう。</li>
+                <li><a href="meigen.html">ランダム名言</a> - 名言や格言を見つけて、インスピレーションを得ましょう。</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>このwebサイトはchatGPTによって生成されました。</p>
+        <p>&copy; 2024 ランダムジェネレーションWeb. All rights reserved.</p>
+    </footer>
 </body>
 </html>
