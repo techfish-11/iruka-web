@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ランダムジョーク</title>
+</head>
+<body>
+    <header>
+        <h1>ランダムジョーク</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="recipe.html">ランダムレシピ</a></li>
+                <li><a href="meigen.html">ランダム名言</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>今日のランダムジョーク</h2>
+            <p id="joke">ここにランダムなジョークが表示されます。</p>
+            <button onclick="generateJoke()">新しいジョークを生成</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 ランダムジェネレーションWeb. All rights reserved.</p>
+    </footer>
+    <script>
+        // ランダムな単語のリスト
+        const wordsList = ["おばあちゃん", "宇宙人", "ゾンビ", "忍者", "カメラ", "ピザ", "パンダ", "サッカーボール", "ゴースト", "ドラゴン", "ロボット", "ネコ"];
+
+        // ジョークを生成する関数
+        function generateJoke() {
+            // ランダムに2つの単語を選択
+            const randomIndex1 = Math.floor(Math.random() * wordsList.length);
+            const randomIndex2 = Math.floor(Math.random() * wordsList.length);
+            const word1 = wordsList[randomIndex1];
+            const word2 = wordsList[randomIndex2];
+            
+            // しょうもないジョークの提案
+            const joke = `【しょうもないジョーク】
+                            なんで${word1}が${word2}になったら困る？
+                            答え：なんでもない`;
+            document.getElementById("joke").textContent = joke;
+        }
+
+        // 初回のページ読み込み時にジョークを生成
+        generateJoke();
+    </script>
+</body>
+</html>

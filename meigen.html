@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ランダム名言</title>
+</head>
+<body>
+    <header>
+        <h1>ランダム名言</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="recipe.html">ランダムレシピ</a></li>
+                <li><a href="jo-ku.html">ランダムジョーク</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>今日のランダム名言</h2>
+            <p id="quote">ここにランダムな名言が表示されます。</p>
+            <button onclick="generateQuote()">新しい名言を生成</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 ランダムジェネレーションWeb. All rights reserved.</p>
+    </footer>
+    <script>
+        // ランダムな単語のリスト
+        const wordsList = ["夢", "未来", "愛", "希望", "勇気", "幸福", "友情", "冒険", "笑顔", "自由", "平和", "成功", "チョコレート", "ピザ", "ハンバーガー", "ユニコーン", "宇宙", "冒険", "ダンス", "旅"];
+
+        // 名言を生成する関数
+        function generateQuote() {
+            // ランダムに5つの単語を選択
+            const randomWords = [];
+            for (let i = 0; i < 5; i++) {
+                const randomIndex = Math.floor(Math.random() * wordsList.length);
+                randomWords.push(wordsList[randomIndex]);
+            }
+            // しょうもない名言の提案
+            const quote = `【しょうもない名言】
+                            ${randomWords[0]}は${randomWords[1]}の${randomWords[2]}であり、
+                            ${randomWords[3]}の${randomWords[4]}である。`;
+            document.getElementById("quote").textContent = quote;
+        }
+
+        // 初回のページ読み込み時に名言を生成
+        generateQuote();
+    </script>
+</body>
+</html>
